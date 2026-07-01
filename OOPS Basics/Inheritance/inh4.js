@@ -1,23 +1,27 @@
-// Level 4 - Using super
-// 8. Person → Teacher
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 
-// Person
+    displayInfo() {
+        console.log("Name: " + this.name);
+        console.log("Age: " + this.age);
+    }
+}
 
-// name
-// age
+class Teacher extends Person {
+    constructor(name, age, subject) {
+        super(name, age); // Calls the Person constructor
+        this.subject = subject;
+    }
 
-// Teacher
+    displayInfo() {
+        super.displayInfo(); // Calls the Person's displayInfo()
+        console.log("Subject: " + this.subject);
+    }
+}
 
-// subject
+const obj_ref = new Teacher("Rahul", 35, "Mathematics");
 
-// Method
-
-// displayInfo()
-
-// Output
-
-// Name: Rahul
-// Age: 35
-// Subject: Mathematics
-
-// Use super() and super.method().
+obj_ref.displayInfo();
