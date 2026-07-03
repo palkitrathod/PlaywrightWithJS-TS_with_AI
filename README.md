@@ -6,8 +6,10 @@ A comprehensive learning repository combining **JavaScript/TypeScript fundamenta
 
 This repository serves as a learning resource that includes:
 - **Core JavaScript Concepts**: Arrays, Objects, Functions, Async/Await, Promises, Callbacks, Control Flow
-- **Playwright E2E Testing**: Login validation, form testing, and automated browser interactions
-- **TypeScript Examples**: Test specification files demonstrating type-safe testing
+- **Object-Oriented Programming**: Encapsulation, Inheritance, Polymorphism, Classes & Objects
+- **TypeScript Fundamentals**: Interfaces, Abstraction, type-safe programming examples
+- **Playwright E2E Testing**: Login validation, cart/checkout flows, Page Object Model (POM), fixtures, and codegen
+- **CI/CD**: GitHub Actions workflow for automated Playwright test runs
 - **Best Practices**: Code organization, test structure, and automation patterns
 
 ---
@@ -16,45 +18,83 @@ This repository serves as a learning resource that includes:
 
 ```
 PlaywrightJSTS_AI/
+├── .github/workflows/              # CI/CD
+│   └── playwright.yml             # GitHub Actions workflow for Playwright tests
+│
 ├── tests/                          # Playwright test specifications
 │   ├── play.spec.ts               # Login functionality tests (TypeScript)
+│   ├── codegen_pom.spec.ts        # End-to-end cart/checkout tests using POM
 │   ├── codegen_validation.spec.ts # Generated test validations
-│   ├── codegen1.spec.ts          # Additional codegen tests
-│   ├── example.spec.js           # Example test cases
-│   └── test.spec.js              # General test cases
+│   ├── codegen1.spec.ts           # Additional codegen tests
+│   ├── Export_Import.spec.ts      # Module export/import examples in tests
+│   ├── example.spec.js            # Example test cases
+│   ├── test.spec.js               # General test cases
+│   ├── pages/                     # Page Object Model classes
+│   │   ├── LoginPage.ts, ProductsPage.ts, CartPage.ts
+│   │   ├── CheckoutPage.ts, OverviewPage.ts, CompletePage.ts
+│   ├── fixtures/                  # Custom fixtures & test data
+│   │   ├── pageObjects.ts, setupTeardown.ts, testData.ts
+│   ├── config/                    # Test configuration
+│   │   └── constants.ts
+│   ├── utils/                     # Helper utilities
+│   │   └── helpers.ts
+│   └── README.md                  # Test suite documentation
 │
-├── Playwright_Basic/              # Playwright configuration examples
-│   ├── package.json
-│   └── package-lock.json
+├── Interface/                      # TypeScript interface examples
+│   ├── inf1.ts, inf2.ts
+│   ├── interface_class.ts         # Interfaces with classes
+│   ├── interface_object.ts        # Interfaces with objects
+│   ├── interface_variable.ts      # Interfaces with variables
+│   ├── interface_optional.ts      # Optional properties
+│   ├── Interface_properties.ts, interface_properties2-4.ts
+│   ├── Browsers.ts, Payment.ts    # Real-world interface examples
+│
+├── TypeScript/                     # TypeScript fundamentals
+│   ├── hello_world.ts
+│   ├── ts1.ts, ts2.ts, ts3.ts
+│   ├── interface1.ts, interface2.ts
+│   ├── abs.ts, abstraction.ts     # Abstraction examples
+│
+├── OOPS Basics/                    # Object-Oriented Programming
+│   ├── classobject.js             # Classes and objects
+│   ├── Encapsulation/             # enc1.js through enc6.js
+│   ├── Inheritance/               # inh1.js through inh6.js
+│   ├── Polymorphism/              # method_overriding.js
+│   └── readme.md
 │
 ├── Arrays/                         # JavaScript Array concepts
-│   ├── array1.js, array2.js, array3.js
-│   ├── array_checking.js
+│   ├── array1.js, arrray2.js, array3.js
+│   ├── array_checking
 │   ├── array_slice.js
 │   ├── array_splice.js
 │   ├── array_spread.js
-│   ├── anagram.js
-│   └── 2d_array.js
+│   └── anagram.js
 │
 ├── Async and Await/               # Async/Await patterns
 │   ├── aa1.js, aa2.js, aa3.js, aa4.js
-│   └── Async_Await/
+│
+├── Async_Await/                   # Additional async/await examples
+│   └── aa1.js
 │
 ├── Callbacks/                      # Callback function examples
 │   ├── cb1.js, cb2.js, cb3.js
 │
 ├── Functions/                      # Function concepts
 │   ├── arrow_function.js
+│   ├── arroe_func_real.js
 │   ├── function_expression.js
+│   ├── fun_with_param_returns.js
 │   ├── default_parameter.js
 │   ├── rest_parameter.js
 │   ├── IIFE.js
 │   ├── scope_function.js
 │   └── template_literals.js
 │
-├── Objects/                        # Object-oriented programming
+├── Objects/                        # Object concepts
+│   ├── obj1.js, obj2.js
 │   ├── obj_creation.js
 │   ├── obj_example.js
+│   ├── obj_function.js
 │   ├── obj_get_set_method.js
 │   ├── obj_premetive_ref.js
 │   └── obj_real.js
@@ -64,6 +104,7 @@ PlaywrightJSTS_AI/
 │   ├── promise_all.js
 │   ├── promise_finally.js
 │   ├── promise_Real_api.js
+│   ├── IQ1.js, IQ2.js             # Interview questions
 │   └── promise.md
 │
 ├── Statement_Examples/             # Control flow statements
@@ -73,14 +114,17 @@ PlaywrightJSTS_AI/
 ├── Do_While_Examples/              # Do-While loop patterns
 │   ├── DW1.js through DW5.js
 │   ├── FizzBuzz.js
-│   └── Triangle_Classifier.js
+│   └── Traiangle_Classifier.js
 │
 ├── Multi_Dimenstion_Array/        # Multi-dimensional arrays
 │   ├── 2d_array.js
 │   ├── array_2d_functions.js
-│   ├── Pyramid.js
+│   ├── Piramid.js
 │   ├── real_example.js
-│   └── right_pyramid_patter.js
+│   └── right_piramid_patter.js
+│
+├── WeeklyTests/                    # Weekly practice exercises
+│   ├── code1.js, code2.js
 │
 ├── Javascript_basics/              # Basic JavaScript concepts
 │   ├── first.js
@@ -89,10 +133,13 @@ PlaywrightJSTS_AI/
 ├── chapter_01_basics/              # Fundamentals
 │   └── basics.js
 │
+├── Playwright_Basic/              # Playwright configuration examples
+│   ├── package.json
+│   └── package-lock.json
+│
 ├── playwright.config.js            # Playwright configuration
+├── tsconfig.json                   # TypeScript configuration
 ├── package.json                    # Project dependencies
-├── playwright-report/              # Test results and HTML reports
-├── test-results/                   # Test execution results
 └── README.md                       # This file
 ```
 
@@ -235,11 +282,26 @@ test('should display error message with invalid credentials', async ({ page }) =
 - Do-While loops
 - Problem-solving: FizzBuzz, Triangle Classifier
 
-### 6. **Playwright Testing**
+### 6. **Object-Oriented Programming (OOPS Basics)**
+- Classes and objects
+- Encapsulation (private fields, getters/setters)
+- Inheritance (extends, super)
+- Polymorphism (method overriding)
+
+### 7. **TypeScript & Interfaces**
+- TypeScript basics and type annotations
+- Interfaces with variables, objects, and classes
+- Optional and readonly properties
+- Abstraction with abstract classes
+- Real-world interface examples (Browsers, Payment)
+
+### 8. **Playwright Testing**
 - Browser automation
 - Element location strategies (data-test attributes)
 - User interactions (click, fill, type)
 - Assertions and expectations
+- **Page Object Model (POM)** — page classes for Login, Products, Cart, Checkout, Overview, Complete
+- **Custom fixtures** — page object injection, setup/teardown, test data
 - Test organization and best practices
 
 ---
@@ -259,6 +321,9 @@ test('should display error message with invalid credentials', async ({ page }) =
 - `forbidOnly: true` on CI - Prevents accidental `.only` in production
 - `trace: 'on-first-retry'` - Records video of failed tests
 - `reporter: 'html'` - Generates beautiful HTML reports
+
+### CI/CD (GitHub Actions)
+Playwright tests run automatically via the workflow in `.github/workflows/playwright.yml` on pushes and pull requests. The HTML report is uploaded as a build artifact.
 
 ---
 
@@ -298,7 +363,10 @@ Results are stored in:
 3. **Explore Data Structures** → `Arrays/`, `Objects/`, `Multi_Dimenstion_Array/`
 4. **Control Flow** → `Statement_Examples/`, `Do_While_Examples/`
 5. **Async Patterns** → `Callbacks/` → `Promise/` → `Async and Await/`
-6. **Testing** → `tests/` folder with Playwright examples
+6. **Object-Oriented Programming** → `OOPS Basics/` (Encapsulation → Inheritance → Polymorphism)
+7. **TypeScript** → `TypeScript/` → `Interface/`
+8. **Testing** → `tests/` folder with Playwright examples and Page Object Model
+9. **Practice** → `WeeklyTests/` exercises
 
 ---
 
@@ -330,8 +398,12 @@ Results are stored in:
 ## ✅ What You'll Learn
 
 ✓ Core JavaScript/TypeScript programming concepts  
+✓ Object-oriented programming (encapsulation, inheritance, polymorphism)  
+✓ TypeScript interfaces and abstraction  
 ✓ Asynchronous programming patterns  
 ✓ End-to-end test automation with Playwright  
+✓ Page Object Model and custom fixtures  
+✓ CI/CD with GitHub Actions  
 ✓ Best practices for test organization  
 ✓ HTML report generation and test analytics  
 ✓ Real-world application testing scenarios  
@@ -368,5 +440,5 @@ ISC
 
 ---
 
-**Last Updated**: June 2026  
+**Last Updated**: July 2026  
 **Status**: Active Development
